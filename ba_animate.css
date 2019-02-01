@@ -1,0 +1,157 @@
+/*
+   New Perspectives on HTML and CSS, 7th Edition
+   Tutorial 8
+   Case Problem 2
+
+   Big Apple Physics Animation Styles
+   Author: 
+   Date:   
+
+   Filename: ba_animate.css
+
+*/
+
+
+/* Transition Styles */
+/* Sets background image, font color, and transitioning. */
+nav a {
+    background: url('ba_target.png') no-repeat center;
+    background-size: 0%;
+    color: rgb(253, 240, 133);
+    transition: color 0.8s, background-size 0.3s;
+}
+
+nav a:hover {
+    background-size: 100%;
+    color: rgb(240, 130, 130);
+}
+
+
+/* Animation Styles */
+/* Sets the animation moveRed to the image id, sets time and loop. */
+#redBall {
+    animation: moveRed 5.00s linear infinite;
+}
+
+/* Sets the animation moveRed to the image id, sets time and loop. */
+#blueBall {
+    animation: moveBlue 5.00s linear infinite;
+}
+
+/* Sets the animation moveRed to the image id, sets time and loop. */
+#redSpeed2,
+#blueSpeed2 {
+    animation: showText 5.00s linear infinite;
+    animation: hideText 5.00s linear infinite;
+}
+
+/* Keyframe animation named "moveRed" */
+@keyframes moveRed {
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    0% {
+        position: absolute;
+        left: 0px;
+        filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+    }
+
+    /* Transforms the scale of the balls width wise, gives illusion of 3d. */
+    49% {
+        transform: scaleX(0.4);
+    }
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    50% {
+        position: absolute;
+        left: 380px;
+        filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    }
+
+    /* Transforms the scale of the balls width wise, gives illusion of 3d. */
+    51% {
+        transform: scaleX(1.0);
+    }
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    100% {
+        position: absolute;
+        left: 0px;
+        filter: drop-shadow(-40px 20px 25px rgb(51, 51, 51));
+    }
+}
+
+@keyframes moveBlue {
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    0% {
+        position: absolute;
+        right: 0px;
+        filter: drop-shadow(40px 20px 25px rgb(51, 51, 51));
+    }
+
+    /* Transforms the scale of the balls width wise, gives illusion of 3d. */
+    49% {
+        transform: scaleX(0.4);
+    }
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    50% {
+        position: absolute;
+        right: 380px;
+        filter: drop-shadow(0px 0px 0px rgb(51, 51, 51));
+    }
+
+    /* Transforms the scale of the balls width wise, gives illusion of 3d. */
+    51% {
+        transform: scaleX(1.0);
+    }
+
+    /* Sets position, percentages are for time intervals. Sets position and drop shadow. */
+    100% {
+        position: absolute;
+        right: -700px;
+        filter: drop-shadow(120px 20px 25px rgb(51, 51, 51));
+    }
+}
+
+/* Keyframe animation for text. */
+@keyframes showText {
+
+    /* Percentages for time intervals, sets opacity. */
+    0% {
+        opacity: 0;
+    }
+
+    /* Percentages for time intervals, sets opacity. */
+    49% {
+        opacity: 0;
+    }
+
+    /* Percentages for time intervals, sets opacity. */
+    51% {
+        opacity: 1;
+    }
+
+    /* Percentages for time intervals, sets opacity. */
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideText {
+    0% {
+        opacity: 1;
+    }
+
+    49% {
+        opacity: 1;
+    }
+
+    51% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
